@@ -1,0 +1,97 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  overflow-x: hidden;
+  
+
+}
+pixel-cars{
+  font-size: 8px;
+  image-rendering: pixelated;
+}
+
+main-game{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  position: relative;
+}
+
+player-hud{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  display: flex;
+  padding: 5em;
+}
+
+relative-positioning{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+speedo-meter{
+  width: 30em;
+  height: 30em;
+  background-image: url("/img/Speedometer.webp");
+  background-size: 100%;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+main-menu{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  position: relative;
+}
+
+road-side{
+  flex: 1;
+  display: flex;
+  background-color: green;
+  position: relative;
+  overflow: hidden;
+}
+
+main-road{
+  width: 70em;
+  background-color: white;
+  display: flex;
+  gap: 1em;
+  position: relative;
+}
+
+road-lane{
+  flex: 1;
+  background-color: rgb(20,20,20);
+}
+
+side-tree{
+  background-image: url("/img/TreeVariant1.webp");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 15em;
+  height: 15em;
+  position: relative
+}
+
+player-car{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: red;
+  background-image: url("/img/PixelCar.webp");
+  background-size: 100%;
+  width: 20em;
+  height: 20em;
+  z-index: 1;
+}
