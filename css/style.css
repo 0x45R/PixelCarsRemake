@@ -105,7 +105,7 @@ bomb-indicator.alarm{
 }
 
 speedo-meter-background{
-  background-image: url("/img/Speedometer.webp");
+  background-image: url("../img/Speedometer.webp");
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -125,13 +125,13 @@ speedo-meter-foreground>*{
 }
 
 speedo-meter-pointer{
-  background-image: url("/img/Speedometer-pointer.webp");
+  background-image: url("../img/Speedometer-pointer.webp");
   background-size: 100%;
   background-position: center;
 }
 
 speedo-meter-cap-pointer{
-  background-image: url("/img/Speedometer-cap-pointer.webp");
+  background-image: url("../img/Speedometer-cap-pointer.webp");
   background-size: 100%;
   background-position: center;
 }
@@ -148,7 +148,7 @@ road-side{
   flex: 1;
   display: flex;
   background-color: green;
-  background-image: url("/img/Grass.webp");
+  background-image: url("../img/Grass.webp");
   background-size: 32em;
   position: relative;
   overflow: hidden;
@@ -157,7 +157,7 @@ road-side{
 main-road{
   width: 70em;
   background-color: black;
-  background-image: url("/img/Road.webp");
+  background-image: url("../img/Road.webp");
   background-size: 100%;
   background-position-y: attr(speed) "px";
   display: flex;
@@ -171,7 +171,7 @@ road-lane{
 }
 
 side-tree{
-  background-image: url("/img/TreeVariant1.webp");
+  background-image: url("../img/TreeVariant1.webp");
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -183,7 +183,7 @@ side-tree{
 player-car{
   position: absolute;
   bottom: 0;
-  background-image: url("/img/PixelCar.webp");
+  background-image: url("../img/PixelCar.webp");
   background-size: 100%;
   width: 20em;
   height: 20em;
