@@ -12,6 +12,7 @@ body{
 pixel-cars{
   font-size: 8px;
   image-rendering: pixelated;
+  image-rendering: crisp-edges;
 }
 
 main-game{
@@ -30,22 +31,112 @@ player-hud{
   padding: 5em;
 }
 
+top-bar{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap-reverse;
+  width: 100%;
+  justify-content: center;
+}
+
 relative-positioning{
   position: relative;
   width: 100%;
   height: 100%;
+  align-content: center;
+}
+
+popup-manager{
+  display: flex;
+  height: 20em;
+  flex: 1 20em;
 }
 
 speedo-meter{
   width: 30em;
   height: 30em;
+  justify-self: right;
+}
+
+bomb-indicator{
+  background: red;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: 1s all;
+}
+
+bomb-indicator.exploded{
+  background: white;
+  opacity: 1;
+  animation: none !important;
+}
+
+@keyframes bombalarm{
+  0%{
+    opacity: 0.3;
+  }
+  50%{
+    opacity: 0.8;
+  }
+  100%{
+    opacity: 0.3;
+  }
+}
+
+@keyframes carIdle{
+  0%{
+    transform: scale(1)
+  }
+  50%{
+    transform: scale(1.05);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+
+bomb-indicator.alarm{
+  animation: 2s bombalarm infinite;
+}
+
+speedo-meter-background{
   background-image: url("/img/Speedometer.webp");
   background-size: 100%;
   background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
   position: absolute;
-  top: 0;
-  right: 0;
 }
+speedo-meter-foreground{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+speedo-meter-foreground>*{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+speedo-meter-pointer{
+  background-image: url("/img/Speedometer-pointer.webp");
+  background-size: 100%;
+  background-position: center;
+}
+
+speedo-meter-cap-pointer{
+  background-image: url("/img/Speedometer-cap-pointer.webp");
+  background-size: 100%;
+  background-position: center;
+}
+
+
 main-menu{
   width: 100vw;
   height: 100vh;
@@ -57,13 +148,18 @@ road-side{
   flex: 1;
   display: flex;
   background-color: green;
+  background-image: url("/img/Grass.webp");
+  background-size: 32em;
   position: relative;
   overflow: hidden;
 }
 
 main-road{
   width: 70em;
-  background-color: white;
+  background-color: black;
+  background-image: url("/img/Road.webp");
+  background-size: 100%;
+  background-position-y: attr(speed) "px";
   display: flex;
   gap: 1em;
   position: relative;
@@ -87,11 +183,20 @@ side-tree{
 player-car{
   position: absolute;
   bottom: 0;
-  left: 0;
-  background-color: red;
   background-image: url("/img/PixelCar.webp");
   background-size: 100%;
   width: 20em;
   height: 20em;
   z-index: 1;
+  animation: 0.3s carIdle infinite;
+  transition: 0.1s rotate;
 }
+
+player-car.turnLeft{
+  rotate: -20deg;
+}
+
+player-car.turnRight{
+  rotate: 20deg;
+}
+
